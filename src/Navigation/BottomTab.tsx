@@ -11,16 +11,16 @@ const BottomTab = () => {
   return (
     <Tab.Navigator>
       <Tab.Screen
-        name="Home"
+        name="Events"
         component={Home}
         options={{
-          tabBarLabel: 'Home',
+          tabBarLabel: 'Events',
           tabBarLabelStyle: {
             fontFamily: 'Montserrat_600SemiBold',
             fontSize: 12,
             lineHeight: 18,
           },
-          headerTitle: 'Home',
+          headerTitle: 'Events',
           headerStyle: {
             backgroundColor: '#FFFFFF',
           },
@@ -37,7 +37,7 @@ const BottomTab = () => {
           }, 
           tabBarActiveTintColor: '#0000FF',
           tabBarInactiveTintColor: '#9199AB',
-          headerShown: false,
+          headerShown: true,
         }}
       />
       <Tab.Screen
@@ -67,7 +67,7 @@ const BottomTab = () => {
           }, 
           tabBarActiveTintColor: '#0000FF',
           tabBarInactiveTintColor: '#9199AB',
-          headerShown: false,
+          headerShown: true,
         }}
       />
     </Tab.Navigator>
