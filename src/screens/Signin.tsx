@@ -16,6 +16,10 @@ const Signin = ({ navigation }) => {
     setShowPassword(!showPassword);
   };
 
+  const handleForgotPassword = () => {
+    navigation.navigate('ForgotPassword');
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Sign In</Text>
@@ -39,6 +43,9 @@ const Signin = ({ navigation }) => {
           <Ionicons name={showPassword ? 'eye-off' : 'eye'} size={24} color="#888" />
         </TouchableOpacity>
       </View>
+      <TouchableOpacity style={styles.forgotPassword} onPress={handleForgotPassword}>
+        <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
+      </TouchableOpacity>
       <TouchableOpacity style={styles.button} onPress={handleSignIn}>
         <Text style={styles.buttonText}>Sign In</Text>
       </TouchableOpacity>
@@ -106,6 +113,14 @@ const styles = StyleSheet.create({
     marginTop: 20,
     color: '#007bff',
     fontSize: 16,
+  },
+  forgotPassword: {
+    alignSelf: 'flex-end',
+    marginBottom: 20,
+  },
+  forgotPasswordText: {
+    color: '#101010',
+    fontSize: 14,
   },
 });
 
