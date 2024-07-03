@@ -16,6 +16,7 @@ const BottomTab = () => {
         options={{
           tabBarLabel: 'Home',
           tabBarLabelStyle: {
+            fontFamily: 'Montserrat_600SemiBold',
             fontSize: 12,
             lineHeight: 18,
           },
@@ -45,6 +46,7 @@ const BottomTab = () => {
         options={{
           tabBarLabel: 'Company',
           tabBarLabelStyle: {
+            fontFamily: 'Montserrat_600SemiBold',
             fontSize: 12,
             lineHeight: 18,
           },
