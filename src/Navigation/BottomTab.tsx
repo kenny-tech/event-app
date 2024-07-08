@@ -37,7 +37,7 @@ const BottomTab = () => {
           }, 
           tabBarActiveTintColor: '#0000FF',
           tabBarInactiveTintColor: '#9199AB',
-          headerShown: true,
+          headerShown: false,
         }}
       />
       <Tab.Screen

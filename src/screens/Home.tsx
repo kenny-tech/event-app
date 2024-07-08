@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, FlatList, Image, ActivityIndicator, StyleSheet, Text } from 'react-native';
+import { View, FlatList, Image, ActivityIndicator, StyleSheet, Text, Dimensions, TouchableWithoutFeedback } from 'react-native';
 import { Video } from 'expo-av';
 
 const sampleData = [
@@ -40,6 +40,9 @@ const Home = () => {
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
+  const [playingVideoId, setPlayingVideoId] = useState(null); // State for tracking which video is playing
+
+  const { height: screenHeight, width: screenWidth } = Dimensions.get('window');
 
   useEffect(() => {
     fetchMedia();
@@ -64,31 +67,38 @@ const Home = () => {
     }
   };
 
+  const handleVideoPress = (id: number) => { // Function to handle video play/pause toggle
+    setPlayingVideoId(playingVideoId === id ? null : id);
+  };
+
   const renderMediaItem = ({ item }) => {
     if (item.type === 'video') {
       return (
-        <View style={styles.mediaContainer}>
-          <Video
-            source={{ uri: item.url }}
-            rate={1.0}
-            volume={1.0}
-            isMuted={false}
-            resizeMode="cover"
-            shouldPlay={false}
-            useNativeControls
-            style={styles.media}
-          />
-          <Text style={styles.title}>{item.title}</Text>
-        </View>
+        <TouchableWithoutFeedback onPress={() => handleVideoPress(item.id)}>
+          <View style={[styles.mediaContainer, { height: screenHeight, width: screenWidth }]}>
+            <Video
+              source={{ uri: item.url }}
+              rate={1.0}
+              volume={1.0}
+              isMuted={false}
+              resizeMode="contain"
+              shouldPlay={playingVideoId === item.id}
+              useNativeControls={true} // Enable native controls
+              style={styles.media}
+            />
+            {/* <Text style={styles.title}>{item.title}</Text> */}
+          </View>
+        </TouchableWithoutFeedback>
       );
     } else if (item.type === 'image') {
       return (
-        <View style={styles.mediaContainer}>
+        <View style={[styles.mediaContainer, { height: screenHeight, width: screenWidth }]}>
           <Image
             source={{ uri: item.url }}
             style={styles.media}
+            resizeMode="contain"
           />
-          <Text style={styles.title}>{item.title}</Text>
+          {/* <Text style={styles.title}>{item.title}</Text> */}
         </View>
       );
     }
@@ -104,6 +114,9 @@ const Home = () => {
         onEndReached={fetchMedia}
         onEndReachedThreshold={0.5}
         ListFooterComponent={loading ? <ActivityIndicator size="large" color="#0000ff" /> : null}
+        pagingEnabled
+        horizontal={false}
+        showsVerticalScrollIndicator={false}
       />
     </View>
   );
@@ -115,17 +128,18 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   mediaContainer: {
-    marginBottom: 10,
-    paddingHorizontal: 10,
+    justifyContent: 'center',
   },
   media: {
     width: '100%',
-    height: 200,
+    height: '100%',
   },
   title: {
     fontSize: 16,
     textAlign: 'center',
     marginVertical: 5,
+    backgroundColor: '#fff',
+    width: '100%',
   },
 });
 
