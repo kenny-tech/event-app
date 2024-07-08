@@ -46,6 +46,9 @@ const Company = () => {
           <Text style={styles.companyText}>Name: {company.name}</Text>
           <Text style={styles.companyText}>Address: {company.address}</Text>
           <Text style={styles.companyText}>Phone: {company.phone}</Text>
+          <TouchableOpacity style={styles.button} onPress={() => {}}>
+            <Text style={styles.buttonText}>I am a first timer</Text>
+          </TouchableOpacity>
         </View>
       )}
       {error ? <Text style={styles.error}>{error}</Text> : null}
