@@ -301,7 +301,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
   companyText: {
-    fontSize: 16,
+    fontSize: 14,
     marginBottom: 5,
     fontFamily: 'Montserrat_500Medium',
   },
