@@ -247,6 +247,8 @@ const Company = () => {
           <Text style={styles.companyText}>Title: {company.title}</Text>
           <Text style={styles.companyText}>Venue Name: {company.venueName}</Text>
           <Text style={styles.companyText}>Description: {company.description}</Text>
+          <Text style={styles.companyText}>Minster Name: {company.ministerName}</Text>
+          <Text style={styles.companyText}>Organisation Name: {company.organisationName}</Text>
           <TouchableOpacity style={styles.buttonFirstTimer} onPress={() => {}}>
             <Text style={styles.buttonText}>I am a first timer</Text>
           </TouchableOpacity>
