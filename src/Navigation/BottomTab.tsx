@@ -44,13 +44,13 @@ const BottomTab = () => {
         name="Company"
         component={Company}
         options={{
-          tabBarLabel: 'Company',
+          tabBarLabel: 'Organization',
           tabBarLabelStyle: {
             fontFamily: 'Montserrat_600SemiBold',
             fontSize: 12,
             lineHeight: 18,
           },
-          headerTitle: 'Company',
+          headerTitle: 'Organization',
           headerStyle: {
             backgroundColor: '#FFFFFF',
           },
