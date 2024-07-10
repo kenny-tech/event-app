@@ -289,6 +289,7 @@ const styles = StyleSheet.create({
   buttonText: {
     color: "#fff",
     fontSize: 16,
+    fontFamily: 'Montserrat_500Medium',
   },
   companyDetails: {
     marginTop: 20,
@@ -302,6 +303,7 @@ const styles = StyleSheet.create({
   companyText: {
     fontSize: 16,
     marginBottom: 5,
+    fontFamily: 'Montserrat_500Medium',
   },
   error: {
     color: "red",
