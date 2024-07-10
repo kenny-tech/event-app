@@ -247,7 +247,7 @@ const Company = () => {
           <Text style={styles.companyText}>Title: {company.title}</Text>
           <Text style={styles.companyText}>Venue Name: {company.venueName}</Text>
           <Text style={styles.companyText}>Description: {company.description}</Text>
-          <TouchableOpacity style={styles.button} onPress={() => {}}>
+          <TouchableOpacity style={styles.buttonFirstTimer} onPress={() => {}}>
             <Text style={styles.buttonText}>I am a first timer</Text>
           </TouchableOpacity>
         </View>
@@ -274,6 +274,13 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: "#007bff",
+    padding: 10,
+    borderRadius: 5,
+    alignItems: "center",
+    marginVertical: 20,
+  },
+  buttonFirstTimer: {
+    backgroundColor: "#808080",
     padding: 10,
     borderRadius: 5,
     alignItems: "center",
