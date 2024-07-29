@@ -2,7 +2,7 @@ import * as React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import { Ionicons } from "@expo/vector-icons"; 
 
-import Home from '../screens/Home';
+import Feed from '../screens/Feed';
 import Company from '../screens/Company';
 
 const Tab = createBottomTabNavigator();
@@ -12,7 +12,7 @@ const BottomTab = () => {
     <Tab.Navigator>
       <Tab.Screen
         name="Events"
-        component={Home}
+        component={Feed}
         options={{
           tabBarLabel: 'Events',
           tabBarLabelStyle: {
