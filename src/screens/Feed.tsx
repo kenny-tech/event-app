@@ -10,7 +10,7 @@ const videos = [
   "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
 ];
 
-export default function Feed() {
+const Feed = () => {
   const [currentViewableItemIndex, setCurrentViewableItemIndex] = useState(0);
   const viewabilityConfig = { viewAreaCoveragePercentThreshold: 50 }
   const onViewableItemsChanged = ({ viewableItems }: any) => {
@@ -83,3 +83,5 @@ const styles = StyleSheet.create({
     height: '100%',
   },
 });
+
+export default Feed;
