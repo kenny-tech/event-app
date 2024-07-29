@@ -18,7 +18,9 @@ export default function Feed() {
       setCurrentViewableItemIndex(viewableItems[0].index ?? 0);
     }
   }
+
   const viewabilityConfigCallbackPairs = useRef([{ viewabilityConfig, onViewableItemsChanged }])
+  
   return (
     <View style={styles.container}>
       <FlatList
