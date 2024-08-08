@@ -3,7 +3,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import { Ionicons } from "@expo/vector-icons"; 
 
 import Feed from '../screens/Feed';
-import Company from '../screens/Company';
+import Profile from '../screens/Profile';
 
 const Tab = createBottomTabNavigator();
 
@@ -11,16 +11,16 @@ const BottomTab = () => {
   return (
     <Tab.Navigator>
       <Tab.Screen
-        name="Events"
+        name="Feed"
         component={Feed}
         options={{
-          tabBarLabel: 'Events',
+          tabBarLabel: 'Feed',
           tabBarLabelStyle: {
             fontFamily: 'Montserrat_600SemiBold',
             fontSize: 12,
             lineHeight: 18,
           },
-          headerTitle: 'Events',
+          headerTitle: 'Feed',
           headerStyle: {
             backgroundColor: '#FFFFFF',
           },
@@ -32,25 +32,25 @@ const BottomTab = () => {
           },
           tabBarIcon: (tabInfo) => { 
             return ( 
-              <Ionicons name="home" size={20} color={tabInfo.focused ? "#0000ff" : "#8e8e93"}  />
+              <Ionicons name="home" size={20} color={tabInfo.focused ? "#c4302b" : "#8e8e93"}  />
             ); 
           }, 
-          tabBarActiveTintColor: '#0000FF',
+          tabBarActiveTintColor: '#c4302b',
           tabBarInactiveTintColor: '#9199AB',
           headerShown: false,
         }}
       />
       <Tab.Screen
-        name="Company"
-        component={Company}
+        name="Profile"
+        component={Profile}
         options={{
-          tabBarLabel: 'Organization',
+          tabBarLabel: 'Profile',
           tabBarLabelStyle: {
             fontFamily: 'Montserrat_600SemiBold',
             fontSize: 12,
             lineHeight: 18,
           },
-          headerTitle: 'Organization',
+          headerTitle: 'Profile',
           headerStyle: {
             backgroundColor: '#FFFFFF',
           },
@@ -62,10 +62,10 @@ const BottomTab = () => {
           },
           tabBarIcon: (tabInfo) => { 
             return ( 
-              <Ionicons name="add-circle" size={20} color={tabInfo.focused ? "#0000ff" : "#8e8e93"} />
+              <Ionicons name="person" size={20} color={tabInfo.focused ? "#c4302b" : "#8e8e93"} />
             ); 
           }, 
-          tabBarActiveTintColor: '#0000FF',
+          tabBarActiveTintColor: '#c4302b',
           tabBarInactiveTintColor: '#9199AB',
           headerShown: true,
         }}

@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   button: {
-    backgroundColor: '#007bff',
+    backgroundColor: '#c4302b',
     width: '100%',
     paddingVertical: 12,
     borderRadius: 5,
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
   },
   linkText: {
     marginTop: 20,
-    color: '#007bff',
+    color: '#c4302b',
     fontSize: 16,
   },
   eyeIcon: {
